@@ -85,7 +85,7 @@ auto Comm_cudaMemcpyAsync_GPUToGPU = [](benchmark::State &state, const int numa_
 static void registerer() {
   std::string name;
   for (size_t i = 0; i < unique_cuda_device_ids().size(); ++i) {
-    for (size_t j = i + 1; j < unique_cuda_device_ids().size(); ++j) {
+    for (size_t j = 0; j < unique_cuda_device_ids().size(); ++j) {
       auto src_gpu = unique_cuda_device_ids()[i];
       auto dst_gpu = unique_cuda_device_ids()[j];
       for (auto numa_id : numa::ids()) {

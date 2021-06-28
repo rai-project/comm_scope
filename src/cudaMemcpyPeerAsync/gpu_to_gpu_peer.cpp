@@ -71,7 +71,7 @@ auto Comm_cudaMemcpyPeerAsync_GPUToGPUPeer = [](benchmark::State &state,
 
 static void registerer() {
   for (size_t i = 0; i < unique_cuda_device_ids().size(); ++i) {
-    for (size_t j = i; j < unique_cuda_device_ids().size(); ++j) {
+    for (size_t j = 0; j < unique_cuda_device_ids().size(); ++j) {
       auto srcGpu = unique_cuda_device_ids()[i];
       auto dstGpu = unique_cuda_device_ids()[j];
       int s2d, d2s;

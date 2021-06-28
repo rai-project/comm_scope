@@ -94,7 +94,7 @@ static void registerer() {
   for (auto workload : {READ, WRITE}) {
     for (auto src_gpu : unique_cuda_device_ids()) {
       for (auto dst_gpu : unique_cuda_device_ids()) {
-        if (src_gpu < dst_gpu) {
+        {
 
           int s2d = false;
           int d2s = false;
